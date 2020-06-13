@@ -1,0 +1,44 @@
+@startuml ユースケース
+
+left to right direction
+
+rectangle 簡単な方 {
+  (ユーザーを登録できる) <<UC_1>> as UC_1
+  (ユーザーを編集する) <<UC_12>> as UC_12
+  (ユーザーを削除する) <<UC_13>> as UC_13
+  (ユーザーの過去の履歴が見れる) <<UC_2>> as UC_2
+  (複数ユーザーの過去の履歴が見れる) <<UC_3>> as UC_3
+  (設定をしてゲームを開始できる) <<UC_4>> as UC_4
+  (設定をプリセットとして登録できる) <<UC_5>> as UC_5
+  (プリセット一覧からゲーム設定ができる) <<UC_9>> as UC_9
+  (プリセットを削除する) <<UC_10>> as UC_10
+  (プリセットを編集する) <<UC_11>> as UC_11
+  (ユーザーを選択する) <<UC_6>> as UC_6
+  (Betを選択する) <<UC_7>> as UC_7
+  (ラウンドを選択する) <<UC_8>> as UC_8
+
+  管理者2 --> UC_1
+  管理者2 --> UC_12
+  管理者2 --> UC_13
+  管理者2 --> UC_2
+  管理者2 --> UC_4
+  管理者2 -> UC_5
+  管理者2 --> UC_9
+  管理者2 --> UC_10
+  管理者2 --> UC_11
+
+  UC_1 ..> UC_12 : precedes
+  UC_1 ..> UC_13 : precedes
+  UC_2 ..> UC_3 : extends
+  UC_6 .up.> UC_4 : include
+  UC_7 .up.> UC_4 : include
+  UC_8 .up.> UC_4 : include
+  UC_6 .down.> UC_5 : include
+  UC_7 .down.> UC_5 : include
+  UC_8 .down.> UC_5 : include
+  UC_5 .up.> UC_11 : precedes
+  UC_5 .up.> UC_10 : precedes
+  UC_5 .up.> UC_9 : precedes
+}
+
+@enduml
