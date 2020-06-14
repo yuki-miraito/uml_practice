@@ -1,0 +1,31 @@
+@startuml ドメインモデル図
+left to right direction
+title ドメインモデル図（ver: 2）
+
+hide circle
+hide methods
+hide members
+
+rectangle ユーザー集約 {
+  ユーザー --> 名前
+  ユーザー --> アイコン
+  ユーザー --> 性別
+  ユーザー --> ポイント
+}
+
+rectangle ゲーム集約 {
+  ゲーム "0..n" --> "0..6" ユーザー
+  ゲーム -up-> Bet
+  ゲーム -up-> ラウンド
+
+  ゲーム結果 "0..n" --> "0..6" ユーザー
+  ゲーム結果 -up-> Bet
+  ゲーム結果 -up-> ラウンド
+  ゲーム結果 --> 獲得ポイント
+
+  プリセット "0..n" --> "0..6" ユーザー
+  プリセット -up-> Bet
+  プリセット -up-> ラウンド
+}
+
+@enduml
