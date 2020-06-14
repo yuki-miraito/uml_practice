@@ -47,7 +47,7 @@ rectangle ゲーム {
   UC_5 .up.> UC_10: precedes
   UC_5 .up.> UC_9: precedes
   UC_14 ..> UC_4: precedes
-  UC_15 ..> UC_4: precedes
+  UC_15 ..> UC_14: precedes
   UC_16 ..> UC_4: precedes
 }
 
