@@ -20,6 +20,7 @@ rectangle ゲーム {
   (勝者を選択する) <<UC_14>> as UC_14
   (次のラウンドを開始する) <<UC_15>> as UC_15
   (ゲームを中断する) <<UC_16>> as UC_16
+  (結果を見る) <<UC_17>> as UC_17
 
   管理者 --> UC_1
   管理者 --> UC_12
@@ -33,6 +34,7 @@ rectangle ゲーム {
   管理者 --> UC_14
   管理者 --> UC_15
   管理者 --> UC_16
+  管理者 --> UC_17
 
   UC_1 ..> UC_12: precedes
   UC_1 ..> UC_13: precedes
@@ -49,6 +51,7 @@ rectangle ゲーム {
   UC_14 ..> UC_4: precedes
   UC_15 ..> UC_14: precedes
   UC_16 ..> UC_4: precedes
+  UC_17 ..> UC_15: precedes
 }
 
 @enduml
