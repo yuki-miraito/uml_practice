@@ -1,8 +1,9 @@
 @startuml ユースケース
 
+title ユースケース図
 left to right direction
 
-rectangle 簡単な方 {
+rectangle ゲーム {
   (ユーザーを登録できる) <<UC_1>> as UC_1
   (ユーザーを編集する) <<UC_12>> as UC_12
   (ユーザーを削除する) <<UC_13>> as UC_13
@@ -16,29 +17,38 @@ rectangle 簡単な方 {
   (ユーザーを選択する) <<UC_6>> as UC_6
   (Betを選択する) <<UC_7>> as UC_7
   (ラウンドを選択する) <<UC_8>> as UC_8
+  (勝者を選択する) <<UC_14>> as UC_14
+  (次のラウンドを開始する) <<UC_15>> as UC_15
+  (ゲームを中断する) <<UC_16>> as UC_16
 
-  管理者2 --> UC_1
-  管理者2 --> UC_12
-  管理者2 --> UC_13
-  管理者2 --> UC_2
-  管理者2 --> UC_4
-  管理者2 -> UC_5
-  管理者2 --> UC_9
-  管理者2 --> UC_10
-  管理者2 --> UC_11
+  管理者 --> UC_1
+  管理者 --> UC_12
+  管理者 --> UC_13
+  管理者 --> UC_2
+  管理者 --> UC_4
+  管理者 -> UC_5
+  管理者 --> UC_9
+  管理者 --> UC_10
+  管理者 --> UC_11
+  管理者 --> UC_14
+  管理者 --> UC_15
+  管理者 --> UC_16
 
-  UC_1 ..> UC_12 : precedes
-  UC_1 ..> UC_13 : precedes
-  UC_2 ..> UC_3 : extends
-  UC_6 .up.> UC_4 : include
-  UC_7 .up.> UC_4 : include
-  UC_8 .up.> UC_4 : include
-  UC_6 .down.> UC_5 : include
-  UC_7 .down.> UC_5 : include
-  UC_8 .down.> UC_5 : include
-  UC_5 .up.> UC_11 : precedes
-  UC_5 .up.> UC_10 : precedes
-  UC_5 .up.> UC_9 : precedes
+  UC_1 ..> UC_12: precedes
+  UC_1 ..> UC_13: precedes
+  UC_2 ..> UC_3: extends
+  UC_6 .up.> UC_4: include
+  UC_7 .up.> UC_4: include
+  UC_8 .up.> UC_4: include
+  UC_6 .down.> UC_5: include
+  UC_7 .down.> UC_5: include
+  UC_8 .down.> UC_5: include
+  UC_5 .up.> UC_11: precedes
+  UC_5 .up.> UC_10: precedes
+  UC_5 .up.> UC_9: precedes
+  UC_14 ..> UC_4: precedes
+  UC_15 ..> UC_4: precedes
+  UC_16 ..> UC_4: precedes
 }
 
 @enduml
