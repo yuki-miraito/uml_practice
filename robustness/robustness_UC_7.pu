@@ -1,0 +1,15 @@
+@startuml
+
+title Betの設定
+
+actor 操作ユーザー
+boundary ゲーム画面
+control Bet選択
+entity Bet
+
+操作ユーザー --> ゲーム画面
+ゲーム画面 -->Bet選択
+Bet選択 --> ゲーム画面
+Bet -- Bet選択
+
+@enduml
